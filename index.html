@@ -92,7 +92,7 @@
       padding: 0.95rem 2.8rem 0.95rem 1.15rem;
       border-radius: 8px;
       border: 2px solid var(--cgt-black);
-      font-size: 16px; /* Evita zoom automático en iOS */
+      font-size: 16px;
       outline: none;
       background: #FFFFFF;
       color: var(--cgt-black);
@@ -275,6 +275,16 @@
       color: var(--cgt-black);
     }
 
+    .legal-quote {
+      margin-top: 0.75rem;
+      padding: 0.85rem 1rem;
+      background-color: #F8F8F8;
+      border-left: 4px solid var(--cgt-red);
+      border-radius: 0 6px 6px 0;
+      font-size: 0.9rem;
+      color: #1A1A1A;
+    }
+
     .faq-answer a {
       color: var(--cgt-red);
       font-weight: 700;
@@ -327,7 +337,6 @@
         padding: 0 0.75rem;
       }
 
-      /* Carrusel horizontal táctil para categorías en móvil */
       .categories {
         flex-wrap: nowrap;
         justify-content: flex-start;
@@ -406,12 +415,12 @@ const FAQ_DATA = [
   {
     category: "Permisos y Asuntos Propios",
     q: "¿Cómo funciona la aprobación por silencio administrativo (72 horas) en los Asuntos Propios?",
-    a: "Según convenio, si solicitas un día o unas horas de Asuntos Propios y faltan <strong>menos de 72 horas para el inicio de tu turno de disfrute</strong> sin que la empresa haya respondido (ni aprobado ni denegado), la solicitud queda <strong>aprobada automáticamente por silencio administrativo</strong>. Esto aplica tanto a días completos como a asuntos propios parciales."
+    a: "Según convenio, si solicitas un día o fracciones de 2 horas de Asuntos Propios (licencia personal) y faltan <strong>menos de 72 horas para el inicio de tu turno de disfrute</strong> sin que la empresa haya respondido (ni aprobado ni denegado), la solicitud queda <strong>aprobada automáticamente por silencio positivo</strong>. Esto aplica tanto a días completos como a asuntos propios parciales.<div class='legal-quote'><strong>Artículo 33 h) del Convenio:</strong><br>«3 días al año de licencia personal, que no será compensable ni recuperable. El referido permiso que no requerirá justificación, estará supeditado a que en su disfrute no exista coincidencia con otras ausencias de trabajadores que, en su conjunto, superen en un 20 por ciento al personal del mismo nivel, grupo profesional y turno de trabajo. Los trabajadores podrán disfrutar de los días licencia personal por jornada completa o fracciones de 2 horas.<br>La empresa contestará a la petición del trabajador con al menos 72 horas de antelación al disfrute del mismo, considerando el silencio de la empresa positivo pasado el plazo establecido.»</div>"
   },
   {
     category: "Permisos y Asuntos Propios",
     q: "¿El silencio administrativo de 72 horas aplica también a los días No Retribuidos?",
-    a: "<strong>No.</strong> El silencio administrativo de 72 horas solo aplica por convenio a los <strong>Asuntos Propios (AP)</strong>. Los permisos no retribuidos requieren aprobación expresa de la empresa, aunque desde RRHH suelen esperar hasta última hora antes del turno para revisar el volumen de trabajo antes de aprobar o denegar."
+    a: "<strong>No.</strong> El silencio administrativo positivo de 72 horas solo aplica por convenio (art. 33 h) a los <strong>Asuntos Propios / licencia personal (AP)</strong>. Los permisos no retribuidos requieren aprobación expresa de la empresa, aunque desde RRHH suelen esperar hasta última hora antes del turno para revisar el volumen de trabajo antes de aprobar o denegar."
   },
   {
     category: "Permisos y Asuntos Propios",
@@ -420,18 +429,18 @@ const FAQ_DATA = [
   },
   {
     category: "Permisos y Asuntos Propios",
-    q: "Si pido 1 hora o un tramo parcial de Asuntos Propios, ¿me corresponde el descanso de 10 minutos?",
+    q: "Si pido un tramo parcial de Asuntos Propios, ¿me corresponde el descanso de 10 minutos?",
     a: "El descanso retribuido de 10 minutos corresponde por jornada continuada trabajada según los tramos establecidos en el centro; si reduces la jornada mediante permiso parcial por debajo del umbral exigido para el descanso, no se genera ese descanso adicional."
   },
   {
     category: "Permisos y Asuntos Propios",
-    q: "¿Cuántos días de Asuntos Propios corresponden al año y cómo se generan?",
-    a: "Según el Convenio de Operadores Logísticos de Sevilla, corresponden días de asuntos propios anuales proporcionales al tiempo trabajado/contrato (y se pueden disfrutar completos o por horas/parciales según el saldo disponible en A to Z)."
+    q: "¿Cuántos días de Asuntos Propios corresponden al año y cómo se pueden disfrutar?",
+    a: "Según el <strong>artículo 33 h) del Convenio</strong>, corresponden <strong>3 días al año de licencia personal</strong> (no compensables ni recuperables y sin necesidad de justificación), que pueden disfrutarse por <strong>jornada completa o en fracciones de 2 horas</strong>, siempre que no coincidan simultáneamente más del 20% de ausencias del mismo nivel, grupo profesional y turno."
   },
   {
     category: "Vacaciones y Golden Days",
     q: "¿Cómo funcionan los Golden Days y qué requisitos tienen?",
-    a: "Los Golden Days permiten solicitar días libres en fechas señaladas sujetas a cupo y requisitos de elegibilidad (como no haber disfrutado de ciertos beneficios previos y disponer de saldo). Si solicitas un Golden Day y no tienes saldo suficiente de vacaciones, la empresa lo tramita como permiso no retribuido. Consulta el formulario oficial en el portal de RRHH (QR Cantina)."
+    a: "Los Golden Days permiten solicitar días libres en fechas señaladas sujetas a cupo y requisitos de elegibilidad (como no haber disfrutado de ciertos beneficios previos y disponer de saldo). Si solicitas un Golden Day y no tienes saldo suficiente de vacaciones, la empresa lo tramita como permiso no retribuido."
   },
   {
     category: "Vacaciones y Golden Days",
@@ -440,8 +449,8 @@ const FAQ_DATA = [
   },
   {
     category: "Vacaciones y Golden Days",
-    q: "¿Qué pasa si estoy de vacaciones o de baja médica y me coincide con un festivo o con una ventana de solicitud?",
-    a: "Si estás de baja médica (IT) durante tus vacaciones programadas, no pierdes esos días de vacaciones: tienes derecho a disfrutarlos en otro momento una vez recibas el alta médica, aunque haya finalizado el año natural."
+    q: "¿Qué ocurre si estoy de baja médica (IT) y me coincide con mis vacaciones?",
+    a: "Si estás de baja médica (IT) antes o durante tus vacaciones programadas, <strong>no pierdes esos días de vacaciones</strong>: tienes derecho a disfrutarlos en otro momento una vez recibas el alta médica, aunque haya finalizado el año natural. <strong>Este derecho también se aplica a los trabajadores fijos discontinuos.</strong>"
   },
   {
     category: "Derecho a Huelga",
@@ -461,20 +470,15 @@ const FAQ_DATA = [
   {
     category: "Derecho a Huelga",
     q: "¿Qué ocurre con el plus de domingo o festivo si secundo parcialmente una huelga?",
-    a: "El plus de domingo/festivo es un complemento vinculado a la asistencia en dicha jornada; si se trabaja parte de la jornada o se secunda huelga, revisa siempre tu nómina con la calculadora sindical para verificar que no se apliquen descuentos indebidos sobre conceptos fijos."
+    a: "<strong>Se cobra íntegro.</strong> El plus de domingo o festivo es un complemento por asistencia y <strong>no se desglosa por horas trabajadas</strong>; si acudes a trabajar parte de la jornada y secundas huelga el resto de horas, el plus debe abonarse íntegramente."
   },
   {
     category: "Festivos y Horarios",
     q: "¿Es obligatorio trabajar los días festivos en los que abre el centro?",
-    a: "La apertura en festivos y el llamamiento de turnos dependen de la planificación operativa de la empresa conforme a lo establecido en el convenio colectivo y los acuerdos de centro. Cuando se abren voluntarios para festivos (como el 12 de octubre u otros festivos nacionales/locales), RRHH publica el formulario de inscripción en el portal del QR de cantina."
+    a: "La apertura en festivos y el llamamiento de turnos dependen de la planificación operativa de la empresa conforme a lo establecido en el convenio colectivo y los acuerdos de centro."
   },
   {
     category: "Festivos y Horarios",
-    q: "¿Dónde se consultan los anuncios oficiales de festivos y formularios de inscripción?",
-    a: "En el portal interno de anuncios de RRHH (QR Cantina): <a href='https://sites.google.com/view/sitio-qr-cantina/hr-anuncios/festivos' target='_blank'>Anuncios y Festivos SVQ1</a>."
-  },
-  {
-    category: "Nóminas y Salarios",
     q: "¿Cómo puedo comprobar si me han pagado bien los atrasos del convenio?",
     a: "Descarga todas tus nóminas del periodo afectado en PDF, únelas en un único documento (por ejemplo con iLovePDF) y súbelo a la herramienta creada por CGT: <a href='https://cgtdqa4.github.io/CALCULADORA-ATRASOS/' target='_blank'>Calculadora de Atrasos CGT</a>."
   },
@@ -501,17 +505,17 @@ const FAQ_DATA = [
   {
     category: "Salud y Contacto RRHH",
     q: "¿Cómo se calcula la prestación durante una baja médica (Incapacidad Temporal)?",
-    a: "Depende de si la baja es por contingencias comunes (enfermedad común/accidente no laboral) o contingencias profesionales (accidente de trabajo), aplicándose los porcentajes sobre la base reguladora del mes anterior y los complementos de mejora pactados en convenio. Puedes consultar el desglose detallado en la guía compartida en el grupo."
+    a: "Depende de si la baja es por contingencias comunes (enfermedad común/accidente no laboral) o contingencias profesionales (accidente de trabajo), aplicándose los porcentajes legales y los complementos de mejora pactados en convenio sobre <strong>la base reguladora de los dos meses anteriores</strong> (criterio aplicado a partir de diciembre)."
   },
   {
     category: "Permisos Retribuidos",
     q: "¿Tengo permiso retribuido para ir a votar si mi turno coincide con el horario electoral?",
-    a: "Sí. Cuando la jornada laboral coincide con el horario de apertura de los colegios electorales (de 9:00 a 20:00 h), corresponde permiso retribuido según las horas de coincidencia establecidas por la Junta de Andalucía (hasta 4 horas si coinciden 4 o más horas). Debes solicitar el <strong>justificante de votación en la mesa electoral</strong> y entregarlo a RRHH a través del formulario habilitado."
+    a: "Sí. Cuando la jornada laboral coincide con el horario de apertura de los colegios electorales (de 9:00 a 20:00 h), corresponde permiso retribuido según las horas de coincidencia establecidas por la Junta de Andalucía (hasta 4 horas si coinciden 4 o más horas). Debes solicitar el <strong>justificante de votación en la mesa electoral</strong> y entregarlo a RRHH."
   },
   {
     category: "Permisos Retribuidos",
     q: "¿Dónde encuentro el resumen completo de permisos retribuidos vigentes (hospitalización, fallecimiento, mudanza, fuerza mayor)?",
-    a: "Puedes consultar el Convenio Colectivo de Operadores Logísticos de Sevilla y el resumen actualizado de permisos retribuidos del Estatuto de los Trabajadores en el <a href='https://portal-de-aplicaciones-cgt.vercel.app/' target='_blank'>Portal de Aplicaciones de CGT</a>."
+    a: "Puedes consultar el Convenio Colectivo de Operadores Logísticos de Sevilla y los enlaces de referencia en el <a href='https://portal-de-aplicaciones-cgt.vercel.app/' target='_blank'>Portal de Aplicaciones de CGT</a>."
   },
   {
     category: "Contratación y Fijos Discontinuos",
